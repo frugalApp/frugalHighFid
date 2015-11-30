@@ -7,6 +7,7 @@ import com.example.peter.frugal.model.ng.Item;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by Peter on 11/28/2015.
@@ -18,11 +19,12 @@ public class Model {
     private Model() {
         //do nothing
         Item item = new Item();
-        item.title = "Sup bitches";
-        item.description = "Checking out my junk I see";
+        item.title = "And I was like";
+        item.description = "Yoooooooooooooooooo, what the fuck? It's like Satan made a webcomic";
         item.itemType = Item.ITEM;
         item.favorited = true;
-        item.images.add(R.drawable.picky);
+        item.poster = "Peter G";
+        item.images.add(R.drawable.ffti);
         for (int i = 0; i < 50; i++)
             searchableItems.add(item);
     }
@@ -37,7 +39,14 @@ public class Model {
         return model;
     }
 
-
     public ArrayList<Item> searchableItems = new ArrayList<Item>();
 
+
+    public Item getItem(UUID id) {
+        for (Item i: searchableItems) {
+            if (i.getId().equals(id))
+                return i;
+        }
+        return null;
+    }
 }

@@ -21,7 +21,7 @@
             android:label="@string/title_activity_search" >
         </activity>
         <activity
-            android:name=".Activities.ItemView"
+            android:name=".Activities.ItemViewPager"
             android:label="@string/title_activity_item_view" >
         </activity>
     </application>
