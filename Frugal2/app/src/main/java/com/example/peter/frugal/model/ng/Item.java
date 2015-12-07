@@ -2,6 +2,7 @@ package com.example.peter.frugal.model.ng;
 
 import android.graphics.Bitmap;
 import android.location.Geocoder;
+import android.net.Uri;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +17,7 @@ public class Item {
 
 
     public String title;
-    public ArrayList<Integer> images = new ArrayList<Integer>();
+    public ArrayList<Uri> images = new ArrayList<Uri>();
     public String location;
     public String catagory;
     public Date mDate;
@@ -30,8 +31,9 @@ public class Item {
 
     public Item () {
         mId = UUID.randomUUID();
-        images = new ArrayList<Integer>();
+        images = new ArrayList<Uri>();
         mDate = new Date();
+        favorited = false;
         numberWatching = (int)(Math.round(Math.random() * 20) % 20);
     }
 

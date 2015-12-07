@@ -24,6 +24,12 @@
             android:name=".Activities.ItemViewPager"
             android:label="@string/title_activity_item_view" >
         </activity>
+        <activity
+            android:name=".Activities.NewPost"
+            android:label="@string/title_activity_new_post" >
+        </activity>
     </application>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>

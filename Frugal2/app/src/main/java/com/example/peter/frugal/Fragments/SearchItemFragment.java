@@ -6,6 +6,7 @@ import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -74,8 +75,25 @@ public class SearchItemFragment extends ListFragment {
                     startActivity(i);
                 }
             });
+            final ImageButton watching = (ImageButton)convertView.findViewById(R.id.image_button_favorite);
+            if (c.favorited) {
+                watching.setImageResource(R.drawable.star_watching);
+            }
+            watching.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (c.favorited) {
+                        c.favorited = false;
+                        watching.setImageResource(R.drawable.star_empty);
+                    }
+                    else {
+                        c.favorited = true;
+                        watching.setImageResource(R.drawable.star_watching);
+                    }
+                }
+            });
             if (c.images.size() > 0)
-                imageTextView.setImageResource( c.images.get(0));
+                imageTextView.setImageURI(c.images.get(0));
 
             return convertView;
         }

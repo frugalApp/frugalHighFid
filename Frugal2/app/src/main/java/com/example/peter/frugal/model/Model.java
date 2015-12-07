@@ -1,6 +1,7 @@
 package com.example.peter.frugal.model;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 
 import com.example.peter.frugal.R;
 import com.example.peter.frugal.model.ng.Item;
@@ -24,7 +25,7 @@ public class Model {
         item.itemType = Item.ITEM;
         item.favorited = true;
         item.poster = "Peter G";
-        item.images.add(R.drawable.ffti);
+        item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.ffti));
         for (int i = 0; i < 50; i++)
             searchableItems.add(item);
     }
@@ -38,6 +39,8 @@ public class Model {
         if (model == null) model = new Model();
         return model;
     }
+
+    public Item newTempTiem = new Item();
 
     public ArrayList<Item> searchableItems = new ArrayList<Item>();
 

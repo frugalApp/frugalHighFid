@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,7 +52,7 @@ public class ItemFragment extends Fragment {
         TextView title = (TextView)v.findViewById(R.id.item_view_title);
         title.setText(item.title);
         ImageView mainImage = (ImageView)v.findViewById(R.id.item_view_main_image);
-        mainImage.setImageResource(item.images.get(0));
+        mainImage.setImageURI(item.images.get(0));
         EditText description = (EditText)v.findViewById(R.id.view_item_description_box);
         String desc = " Posted by User:   " + item.poster + "  (100%)\n";
         desc += "Description: " + item.description + "\n";
@@ -67,6 +68,19 @@ public class ItemFragment extends Fragment {
         desc += "Date added: " + android.text.format.DateFormat.format("EEE, dd MMM yyyy", item.mDate) + "\n";
         desc += "Post ID: " + item.getId();
         description.setText(desc);
+        final ImageButton watching = (ImageButton)v.findViewById(R.id.item_view_favorite_button);
+        watching.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                item.favorited = !item.favorited;
+                if (item.favorited)
+                    watching.setImageResource(R.drawable.star_watching);
+                else
+                    watching.setImageResource(R.drawable.star_empty);
+            }
+        });
+        if (item.favorited)
+            watching.setImageResource(R.drawable.star_watching);
         return v;
     }
 }
