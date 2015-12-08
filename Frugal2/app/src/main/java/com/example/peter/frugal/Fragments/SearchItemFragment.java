@@ -45,6 +45,8 @@ public class SearchItemFragment extends ListFragment {
 
     public void updateAndShowMItems() {
         updateMItems();
+        ItemAdapter adapter = new ItemAdapter(mItems);
+        setListAdapter(adapter);
         ((ItemAdapter)getListAdapter()).notifyDataSetChanged();
     }
 
@@ -119,7 +121,6 @@ public class SearchItemFragment extends ListFragment {
     @Override
     public void onResume() {
         super.onResume();
-        updateMItems();
-        ((ItemAdapter)getListAdapter()).notifyDataSetChanged();
+        updateAndShowMItems();
     }
 }

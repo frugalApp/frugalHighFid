@@ -26,16 +26,12 @@ public class Search extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+    }
 
-        Button searchButton = (Button)findViewById(R.id.search_words_button);
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SearchItemFragment thing = (SearchItemFragment)getSupportFragmentManager().findFragmentById(R.id.search_results);
-                Model.getModel().searchString = (String)((EditText)findViewById(R.id.search_words_bar)).getText().toString();
-                thing.updateAndShowMItems();
-            }
-        });
+    public void applySearch(View view) {
+        Model.getModel().searchString = (String)((EditText)findViewById(R.id.search_words_bar)).getText().toString();
+        SearchItemFragment thing = (SearchItemFragment)getSupportFragmentManager().findFragmentById(R.id.search_results);
+        thing.updateAndShowMItems();
     }
 
     public void doSearch(View view) {

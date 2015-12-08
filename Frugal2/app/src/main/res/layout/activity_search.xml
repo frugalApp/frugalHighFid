@@ -57,6 +57,7 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:text="\?"
+                android:onClick="applySearch"
                 android:background="@drawable/back_button"/>
             </LinearLayout>
         <fragment
