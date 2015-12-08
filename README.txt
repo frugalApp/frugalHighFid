@@ -36,3 +36,8 @@ If you get an error saying the emulation require hardware acceleration, here is 
 	It might take a minute or 2 to show the emulator window.
 	
 	
+Link to the repository:
+	https://github.com/frugalApp/frugalHighFid.git
+	https://github.com/frugalApp/frugalHighFid
+	
+	
