@@ -18,16 +18,56 @@ public class Model {
     private static Model model;
 
     private Model() {
-        //Create dummy data
         Item item = new Item();
+        //Create dummy data
+        //Data from post off craigslist free section or that one post about my car that I never sold or Always Sunny in Philly
+        item.title = "Lovely sofa";
+        item.description = "Looking for someone who can take over a lovely sofa. The sofa frame is solid and well-made. It is a pretty antique piece, and very comfortable.(Size: 33.5x78.8x35.4 inch)";
+        item.timeFree = "Anytime";
+        item.itemType = Item.ITEM;
+        item.location = "McKeldin";
+        item.poster = "Bethany";
+        item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.ugly_couch));
+        searchableItems.add(item);
+
+        item = new Item();
         item.title = "And I was like";
         item.description = "Yoooooooooooooooooo, what the fuck? It's like Satan made a webcomic";
         item.itemType = Item.ITEM;
-       // item.favorited = true;
         item.poster = "Peter G";
         item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.ffti));
-        for (int i = 0; i < 50; i++)
-            searchableItems.add(item);
+        searchableItems.add(item);
+
+        item = new Item();
+        item.title = "Infant mittens";
+        item.description = "Two pair infant mittens. Fits 9-15 month olds, give or take. ";
+        item.itemType = Item.ITEM;
+        item.timeFree = "Dec 8th";
+        // item.favorited = true;
+        item.poster = "Peter G";
+        item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.mittens));
+        searchableItems.add(item);
+
+        item = new Item();
+        item.title = "KiTtEn MiTtEnS!!!!";
+        item.description = "Is your cat making TOO MUCH NOISE all the time?? Is your cat constantly stomping around DRIVING YOU CRAAAZY?? Well come try Kitten Mittens. Finally, a comfortable, elegant mittens for cats!";
+        item.itemType = Item.ITEM;
+        item.timeFree = "Anytime";
+        // item.favorited = true;
+        item.poster = "Charlie Kelly";
+        item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.kitn_mtns_one));
+        item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.kitn_mtns_two));
+        item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.kitn_mtns_three));
+        searchableItems.add(item);
+
+        item = new Item();
+        item.title = "free";
+        item.description = "Items shown on picture. Please reply with pickup time. Must take everything";
+        item.itemType = Item.ITEM;
+        // item.favorited = true;
+        item.poster = "Idiot";
+        item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.so_descriptive));
+        searchableItems.add(item);
     }
 
 

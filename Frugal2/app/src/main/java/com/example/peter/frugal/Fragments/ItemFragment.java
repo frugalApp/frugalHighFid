@@ -65,8 +65,12 @@ public class ItemFragment extends Fragment {
             mainImage.setImageURI(item.images.get(0));
         if (item.images.size() > 1)
             secondImage.setImageURI(item.images.get(1));
+        else
+            secondImage.setVisibility(View.GONE);
         if (item.images.size() > 2)
-            secondImage.setImageURI(item.images.get(2));
+            threeImage.setImageURI(item.images.get(2));
+        else
+            threeImage.setVisibility(View.GONE);
 
         EditText description = (EditText)v.findViewById(R.id.view_item_description_box);
         String desc = " Posted by User:   " + item.poster + "  (100%)\n";
