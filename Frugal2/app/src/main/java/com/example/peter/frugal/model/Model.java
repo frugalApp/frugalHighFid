@@ -18,7 +18,7 @@ public class Model {
     private static Model model;
 
     private Model() {
-        //do nothing
+        //Create dummy data
         Item item = new Item();
         item.title = "And I was like";
         item.description = "Yoooooooooooooooooo, what the fuck? It's like Satan made a webcomic";
@@ -34,6 +34,11 @@ public class Model {
     /*
     Singleton com.example.peter.frugal.model is the easiest way to keep all the activities in sync with each other
     Not the best solution for the long term, but for the purposes of UI development, it's fine
+
+    Passing data between activities gets complicated and requires checks to make sure things don't explode violently
+
+    However, activities are wonderful in that using the app is easier in that we can utilize the "Back"
+    button built into all android phones. So Singleton it is
      */
     public static Model getModel() {
         if (model == null) model = new Model();

@@ -16,6 +16,10 @@ import com.example.peter.frugal.R;
  * Created by Peter on 11/28/2015.
  */
 public class HeaderFragment extends Fragment {
+    /*
+        This is used in just about every activity, so it gets its own logic class
+        All this does is check if this is the new post window and if so hide the make new post button
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_search_header, container, false);

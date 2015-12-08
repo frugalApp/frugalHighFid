@@ -19,6 +19,11 @@ import com.example.peter.frugal.model.ng.Item;
 
 import java.util.ArrayList;
 
+/*
+    Not much of the search page is handled here. The apply search call is handled here for simplicity's sake
+    If that logic were handling in its fragment, that would require a much more complex call to get the other
+    fragment.
+ */
 
 public class Search extends FragmentActivity {
 
@@ -28,12 +33,18 @@ public class Search extends FragmentActivity {
         setContentView(R.layout.activity_search);
     }
 
+    /*
+        Get the text the user has given for a search string and filter out search results based on it
+     */
     public void applySearch(View view) {
         Model.getModel().searchString = (String)((EditText)findViewById(R.id.search_words_bar)).getText().toString();
         SearchItemFragment thing = (SearchItemFragment)getSupportFragmentManager().findFragmentById(R.id.search_results);
         thing.updateAndShowMItems();
     }
 
+    /*
+        Start the advanced search activity. It does nothing except exist. Basically, it's art :D
+     */
     public void doSearch(View view) {
         Intent intent = new Intent(this, SearchQuery.class);
         startActivity(intent);

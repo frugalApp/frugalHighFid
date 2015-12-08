@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.peter.frugal.R;
-
+/*
+    Nothing special here. Once the login button is clicked, move on to the real app
+ */
 
 public class MainActivity extends FragmentActivity {
     final MainActivity thing = this;

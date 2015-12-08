@@ -29,6 +29,16 @@ public class NewPost extends FragmentActivity {
     private static final int RESULT_LOAD_IMAGE_TWO = 3285;
     private static final int RESULT_LOAD_IMAGE_THREE = 8532;
 
+    /*
+        An activity that actually does something
+
+        So, the logic is handled here as communicating between activities is easier than communicating
+         activities to other activities to their fragments. What is going on here is basically reading
+         user input or allowing the user to upload their own image into the app.
+
+         For some reason, pictures from my, Peter, throw errors that I could not resolve.
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,9 +85,9 @@ public class NewPost extends FragmentActivity {
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             final View rootView = inflater.inflate(R.layout.fragment_new_post, container, false);
+            //magic of the singleton model once again
             Model model = Model.getModel();
             model.newTempTiem = new Item();
 
@@ -91,6 +101,8 @@ public class NewPost extends FragmentActivity {
                     startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE_ONE);
                 }
             });
+
+
             picTwo = (ImageButton)rootView.findViewById(R.id.new_image_two);
             if (model.newTempTiem.images.size() > 1)
                 picOne.setImageURI(model.newTempTiem.images.get(1));
@@ -101,6 +113,8 @@ public class NewPost extends FragmentActivity {
                     startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE_TWO);
                 }
             });
+
+
             picThree = (ImageButton)rootView.findViewById(R.id.new_image_three);
             if (model.newTempTiem.images.size() > 2)
                 picOne.setImageURI(model.newTempTiem.images.get(2));
@@ -111,13 +125,17 @@ public class NewPost extends FragmentActivity {
                     startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE_THREE);
                 }
             });
+
+
             Button post = (Button)rootView.findViewById(R.id.new_post_button);
             post.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //a new Item must be create as their date create should be the same as when the create button was pressed
                     Item newItem = new Item();
                     newItem.images = new ArrayList<Uri>(Model.getModel().newTempTiem.images);
                     newItem.title = ((TextView)rootView.findViewById(R.id.new_post_title)).getText().toString();
+                    //I have too much stuff and must get rid of it alllllll D:<
                     newItem.poster = "pgrasso";
                     newItem.catagory = ((TextView)rootView.findViewById(R.id.new_post_catagoies)).getText().toString();
                     newItem.description = ((TextView)rootView.findViewById(R.id.new_post_description)).getText().toString();
@@ -133,6 +151,11 @@ public class NewPost extends FragmentActivity {
         @Override
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
+            /*
+                Here we are determining if the user had actually picked a picture, and what should now
+                be visible.
+                Images are shown as they become available, up to three for demo purposes
+             */
             if (resultCode == RESULT_OK && data != null) {
                 Uri selectedImage = data.getData();
                 Item item = Model.getModel().newTempTiem;

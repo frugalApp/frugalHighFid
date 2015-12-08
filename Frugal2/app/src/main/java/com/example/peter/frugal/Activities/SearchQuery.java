@@ -16,6 +16,15 @@ import com.example.peter.frugal.R;
 
 public class SearchQuery extends FragmentActivity {
 
+    /*
+        All auto generated code. Nothing important here other than what is needed for the activity
+        to exist.
+
+        Less code would have been needed if a viewstack was used instead, but then the magical back
+        button wouldn't bring you back to the search results and instead take you to the login and
+        that would be annoying
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

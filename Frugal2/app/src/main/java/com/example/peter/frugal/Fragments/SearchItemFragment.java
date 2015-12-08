@@ -21,6 +21,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Peter on 11/28/2015.
+ *
+ * This is just an item renderer that allows us to filter out items by the item's title
  */
 public class SearchItemFragment extends ListFragment {
     ArrayList<Item> mItems;
@@ -35,6 +37,7 @@ public class SearchItemFragment extends ListFragment {
         setListAdapter(adapter);
     }
 
+    //No reason for anyone else to call this.
     private void updateMItems() {
         mItems = new ArrayList<Item>();
         for (Item item : Model.getModel().searchableItems) {
@@ -43,6 +46,8 @@ public class SearchItemFragment extends ListFragment {
         }
     }
 
+    //If an update is needed to be called by an external source, then we are changing the displayed
+    //data instead of modifying it and will need to reinstantiate the data
     public void updateAndShowMItems() {
         updateMItems();
         ItemAdapter adapter = new ItemAdapter(mItems);
@@ -61,6 +66,7 @@ public class SearchItemFragment extends ListFragment {
                 convertView = getActivity().getLayoutInflater().inflate(R.layout.search_list_item, null);
             }
 
+            //display the data for the current item on the list and add event listeners to them
             final Item c = getItem(position);
 
             TextView titleTextView = (TextView)convertView.findViewById(R.id.search_item_title);
@@ -121,6 +127,7 @@ public class SearchItemFragment extends ListFragment {
     @Override
     public void onResume() {
         super.onResume();
+        //In case the data was modified in the ItemViewPager
         updateAndShowMItems();
     }
 }
