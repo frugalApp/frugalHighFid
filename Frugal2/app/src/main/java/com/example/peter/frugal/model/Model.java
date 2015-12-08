@@ -31,8 +31,8 @@ public class Model {
         searchableItems.add(item);
 
         item = new Item();
-        item.title = "And I was like";
-        item.description = "Yoooooooooooooooooo, what the fuck? It's like Satan made a webcomic";
+        item.title = "540i Bimmer";
+        item.description = "It has wheels, an engine, some seats. y'know, things";
         item.itemType = Item.ITEM;
         item.poster = "Peter G";
         item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.ffti));

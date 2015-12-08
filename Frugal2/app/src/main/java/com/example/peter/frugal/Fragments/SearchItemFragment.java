@@ -41,7 +41,7 @@ public class SearchItemFragment extends ListFragment {
     private void updateMItems() {
         mItems = new ArrayList<Item>();
         for (Item item : Model.getModel().searchableItems) {
-            if (item.title.indexOf(Model.getModel().searchString.trim()) != -1)
+            if (item.title.toLowerCase().indexOf(Model.getModel().searchString.trim().toLowerCase()) != -1)
                 mItems.add(item);
         }
     }

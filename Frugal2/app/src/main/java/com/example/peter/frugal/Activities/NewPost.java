@@ -23,6 +23,9 @@ import com.example.peter.frugal.model.Model;
 import com.example.peter.frugal.model.ng.Item;
 
 import java.util.ArrayList;
+/**
+ * created by Peter Grasso
+ */
 
 public class NewPost extends FragmentActivity {
     private static final int RESULT_LOAD_IMAGE_ONE = 2358;

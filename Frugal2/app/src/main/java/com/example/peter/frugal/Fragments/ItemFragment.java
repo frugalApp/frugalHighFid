@@ -1,5 +1,6 @@
 package com.example.peter.frugal.Fragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,6 +26,7 @@ import java.util.UUID;
  */
 public class ItemFragment extends Fragment {
     public static final String EXTRA_ITEM_ID = "fdsanbifbaueiwfbreyuwfvberwi";
+    private Uri main, aux1, aux2;
 
     private Item item;
 
@@ -57,18 +59,44 @@ public class ItemFragment extends Fragment {
 
         TextView title = (TextView)v.findViewById(R.id.item_view_title);
         title.setText(item.title);
-        ImageView mainImage = (ImageView)v.findViewById(R.id.item_view_main_image);
-        ImageView secondImage = (ImageView)v.findViewById(R.id.item_view_main_image);
-        ImageView threeImage = (ImageView)v.findViewById(R.id.item_view_main_image);
+        final ImageView mainImage = (ImageView)v.findViewById(R.id.item_view_main_image);
+        final ImageView secondImage = (ImageView)v.findViewById(R.id.item_view_aux_im_1);
+        final ImageView threeImage = (ImageView)v.findViewById(R.id.item_view_aux_im_2);
 
-        if (item.images.size() > 0)
+        if (item.images.size() > 0) {
+            main = item.images.get(0);
             mainImage.setImageURI(item.images.get(0));
-        if (item.images.size() > 1)
+        }
+        if (item.images.size() > 1) {
+            aux1 = item.images.get(1);
+            secondImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri temp = main;
+                    main = aux1;
+                    aux1 = temp;
+                    mainImage.setImageURI(main);
+                    secondImage.setImageURI(aux1);
+                }
+            });
             secondImage.setImageURI(item.images.get(1));
+        }
         else
             secondImage.setVisibility(View.GONE);
-        if (item.images.size() > 2)
+        if (item.images.size() > 2) {
+            aux2 = item.images.get(2);
             threeImage.setImageURI(item.images.get(2));
+            threeImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri temp = main;
+                    main = aux2;
+                    aux2 = temp;
+                    mainImage.setImageURI(main);
+                    threeImage.setImageURI(aux2);
+                }
+            });
+        }
         else
             threeImage.setVisibility(View.GONE);
 

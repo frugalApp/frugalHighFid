@@ -13,6 +13,9 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 import com.example.peter.frugal.R;
+/**
+ * created by Peter Grasso
+ */
 
 public class SearchQuery extends FragmentActivity {
 

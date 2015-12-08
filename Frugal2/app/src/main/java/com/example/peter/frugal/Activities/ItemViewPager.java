@@ -24,6 +24,10 @@ import com.example.peter.frugal.model.ng.Item;
 import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * created by Peter Grasso
+ */
+
 public class ItemViewPager extends FragmentActivity {
     private ViewPager mViewPager;
     private ArrayList<Item> items;
