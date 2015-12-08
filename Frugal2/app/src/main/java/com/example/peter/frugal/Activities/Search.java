@@ -1,12 +1,18 @@
 package com.example.peter.frugal.Activities;
 
+import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
+import com.example.peter.frugal.Fragments.SearchItemFragment;
 import com.example.peter.frugal.R;
 import com.example.peter.frugal.model.Model;
 import com.example.peter.frugal.model.ng.Item;
@@ -20,6 +26,21 @@ public class Search extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        Button searchButton = (Button)findViewById(R.id.search_words_button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SearchItemFragment thing = (SearchItemFragment)getSupportFragmentManager().findFragmentById(R.id.search_results);
+                Model.getModel().searchString = (String)((EditText)findViewById(R.id.search_words_bar)).getText().toString();
+                thing.updateAndShowMItems();
+            }
+        });
+    }
+
+    public void doSearch(View view) {
+        Intent intent = new Intent(this, SearchQuery.class);
+        startActivity(intent);
     }
 
 

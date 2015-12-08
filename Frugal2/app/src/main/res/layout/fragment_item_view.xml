@@ -13,24 +13,23 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
         <LinearLayout
+            android:layout_marginTop="15dp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:layout_gravity="left">
                 <TextView
                     android:id="@+id/item_view_title"
                     android:layout_width="wrap_content"
                     android:maxWidth="130pt"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
                     android:textSize="40dp"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="dickinson"/>
                 <ImageButton
@@ -44,7 +43,7 @@
                     android:scaleType="fitCenter"
                     android:background="#00000000"
                     android:src="@drawable/star_empty" />
-            </LinearLayout>
+            </RelativeLayout>
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,6 +88,7 @@
                 android:layout_width="fill_parent"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginBottom="50dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/back"
                 android:editable="false"/>

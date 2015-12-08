@@ -3,9 +3,11 @@ package com.example.peter.frugal.Fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,10 +29,23 @@ public class SearchItemFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mItems = Model.getModel().searchableItems;
+        updateMItems();
+
         ItemAdapter adapter = new ItemAdapter(mItems);
         setListAdapter(adapter);
+    }
 
+    private void updateMItems() {
+        mItems = new ArrayList<Item>();
+        for (Item item : Model.getModel().searchableItems) {
+            if (item.title.indexOf(Model.getModel().searchString.trim()) != -1)
+                mItems.add(item);
+        }
+    }
+
+    public void updateAndShowMItems() {
+        updateMItems();
+        ((ItemAdapter)getListAdapter()).notifyDataSetChanged();
     }
 
     private class ItemAdapter extends ArrayAdapter<Item> {
@@ -76,9 +91,10 @@ public class SearchItemFragment extends ListFragment {
                 }
             });
             final ImageButton watching = (ImageButton)convertView.findViewById(R.id.image_button_favorite);
-            if (c.favorited) {
+            if (c.favorited)
                 watching.setImageResource(R.drawable.star_watching);
-            }
+            else
+                watching.setImageResource(R.drawable.star_empty);
             watching.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -103,7 +119,7 @@ public class SearchItemFragment extends ListFragment {
     @Override
     public void onResume() {
         super.onResume();
+        updateMItems();
         ((ItemAdapter)getListAdapter()).notifyDataSetChanged();
     }
-
 }

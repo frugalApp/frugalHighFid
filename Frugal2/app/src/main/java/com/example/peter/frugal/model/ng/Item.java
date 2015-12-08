@@ -15,6 +15,8 @@ public class Item {
     public static final String EVENT = "EVENT";
     public static final String ITEM = "ITEM";
 
+    private static int UIDCounter = 0;
+
 
     public String title;
     public ArrayList<Uri> images = new ArrayList<Uri>();
@@ -27,10 +29,12 @@ public class Item {
     public String timeFree;
     public boolean favorited;
     public String description;
+    private int UID;
     private UUID mId;
 
     public Item () {
         mId = UUID.randomUUID();
+        UID = UIDCounter++;
         images = new ArrayList<Uri>();
         mDate = new Date();
         favorited = false;
@@ -39,5 +43,13 @@ public class Item {
 
     public UUID getId() {
         return mId;
+    }
+
+    public int getUID() { return UID; }
+
+    public boolean filterOut(ArrayList<String> words) {
+        boolean toReturn = true;
+
+        return toReturn;
     }
 }

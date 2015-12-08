@@ -52,7 +52,14 @@ public class ItemFragment extends Fragment {
         TextView title = (TextView)v.findViewById(R.id.item_view_title);
         title.setText(item.title);
         ImageView mainImage = (ImageView)v.findViewById(R.id.item_view_main_image);
-        mainImage.setImageURI(item.images.get(0));
+        ImageView secondImage = (ImageView)v.findViewById(R.id.item_view_main_image);
+        ImageView threeImage = (ImageView)v.findViewById(R.id.item_view_main_image);
+        if (item.images.size() > 0)
+            mainImage.setImageURI(item.images.get(0));
+        if (item.images.size() > 1)
+            secondImage.setImageURI(item.images.get(1));
+        if (item.images.size() > 2)
+            secondImage.setImageURI(item.images.get(2));
         EditText description = (EditText)v.findViewById(R.id.view_item_description_box);
         String desc = " Posted by User:   " + item.poster + "  (100%)\n";
         desc += "Description: " + item.description + "\n";
@@ -66,7 +73,7 @@ public class ItemFragment extends Fragment {
             desc += "Location: contact for more info\n";
         desc += "Number Watching: " + item.numberWatching + "\n";
         desc += "Date added: " + android.text.format.DateFormat.format("EEE, dd MMM yyyy", item.mDate) + "\n";
-        desc += "Post ID: " + item.getId();
+        desc += "Post ID: " + item.getUID();
         description.setText(desc);
         final ImageButton watching = (ImageButton)v.findViewById(R.id.item_view_favorite_button);
         watching.setOnClickListener(new View.OnClickListener() {

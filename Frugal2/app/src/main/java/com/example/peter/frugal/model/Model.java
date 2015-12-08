@@ -23,7 +23,7 @@ public class Model {
         item.title = "And I was like";
         item.description = "Yoooooooooooooooooo, what the fuck? It's like Satan made a webcomic";
         item.itemType = Item.ITEM;
-        item.favorited = true;
+       // item.favorited = true;
         item.poster = "Peter G";
         item.images.add(Uri.parse("android.resource://com.example.peter.frugal/" + R.drawable.ffti));
         for (int i = 0; i < 50; i++)
@@ -43,6 +43,8 @@ public class Model {
     public Item newTempTiem = new Item();
 
     public ArrayList<Item> searchableItems = new ArrayList<Item>();
+
+    public String searchString = "";
 
 
     public Item getItem(UUID id) {
