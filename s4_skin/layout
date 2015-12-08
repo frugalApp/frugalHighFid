@@ -1,0 +1,453 @@
+parts {
+    portrait {
+        background {
+            image   S4_Port.png
+        }
+		buttons {
+            soft-left {
+                    image port-button1.png
+                    x 292
+                    y 2312
+            }
+            home {
+                    image port-button2.png
+                    x 529
+                    y 2295
+            }
+            back {
+                    image port-button3.png
+                    x 966
+                    y 2310
+            }
+		}	
+    }
+    landscape {
+        background {
+            image   S4_Land.png
+        }
+		buttons {
+			back {
+                    image land-button3.png
+                    x 2316
+                    y 294
+            }
+            home {
+                    image land-button2.png
+                    x 2300
+                    y 520
+            }
+            soft-left {
+                    image land-button1.png
+                     x 2318
+                     y 957
+            }
+		}
+    }
+
+    device {
+        display {
+            width   1080
+            height  1920
+            x       0
+            y       0
+        }
+    }
+    
+    controls {
+        background {
+            image   controls.png
+        }
+        buttons {
+            camera {
+                    image button.png
+                    x 5
+                    y 5
+            }
+			volume-down {
+                    image button.png
+                    x 163
+                    y 5
+            }
+            volume-up {
+                    image button.png
+                    x 321
+                    y 5
+            }
+			power {
+                    image button.png
+                    x 479
+                    y 5
+            }
+			
+			phone-dial {
+                    image button.png
+                    x 5
+                    y 208
+            }
+            phone-hangup {
+                    image button.png
+                    x 479
+                    y 208
+            }
+			home {
+                    image button.png
+                    x 5
+                    y 413
+            }
+			menu {
+                    image button.png
+                    x 163
+                    y 413
+            }
+			back {
+                    image button.png
+                    x 321
+                    y 413
+            }
+			search {
+                    image button.png
+                    x 479
+                    y 413
+            }
+			
+            dpad-left {
+                    image arrow_left.png
+                    x 153
+                    y 200
+            }
+			dpad-up {
+                    image arrow_up.png
+                    x 220
+                    y 200
+            }
+            dpad-down {
+                    image arrow_down.png
+                    x 220
+                    y 250
+            }
+            dpad-right {
+                    image arrow_right.png
+                    x 321
+                    y 200
+            }
+            dpad-select {
+                    image select.png
+                    x 214
+                    y 229
+            }
+        }
+    }
+
+    keyboard {
+        background {
+            image  keyboard.png
+        }
+        buttons {
+            1 {
+                image  key-num.png
+                x 10
+                y 5
+            }
+			2 {
+                image  key-num.png
+                x 110
+                y 5
+            }
+			3 {
+                image  key-num.png
+                x 210
+                y 5
+            }
+			4 {
+                image  key-num.png
+                x 310
+                y 5
+            }
+			5 {
+                image  key-num.png
+                x 410
+                y 5
+            }
+			6 {
+                image  key-num.png
+                x 510
+                y 5
+            }
+			7 {
+                image  key-num.png
+                x 610
+                y 5
+            }
+			8 {
+                image  key-num.png
+                x 710
+                y 5
+            }
+			9 {
+                image  key-num.png
+                x 810
+                y 5
+            }
+			0 {
+                image  key-num.png
+                x 910
+                y 5
+            }
+			
+			
+			q {
+                image  key.png
+                x 10
+                y 60
+            }
+			w {
+                image  key.png
+                x 110
+                y 60
+            }
+            e {
+                image  key.png
+                x 210
+                y 60
+            }
+            r {
+                image  key.png
+                x 310
+                y 60
+            }
+            t {
+                image  key.png
+                x 410
+                y 60
+            }
+            y {
+                image  key.png
+                x 510
+                y 60
+            }
+            u {
+                image  key.png
+                x 610
+                y 60
+            }
+            i {
+                image  key.png
+                x 710
+                y 60
+            }
+            o {
+                image  key.png
+                x 810
+                y 60
+            }
+            p {
+                image  key.png
+                x 910
+                y 60
+            }
+			
+			
+			a {
+                image  key.png
+                x 63
+                y 120
+            }
+            s {
+                image  key.png
+                x 163
+                y 120
+            }
+            d {
+                image  key.png
+                x 263
+                y 120
+            }
+            f {
+                image  key.png
+                x 363
+                y 120
+            }
+            g {
+                image  key.png
+                x 463
+                y 120
+            }
+            h {
+                image  key.png
+                x 563
+                y 120
+            }
+            j {
+                image  key.png
+                x 663
+                y 120
+            }
+            k {
+                image  key.png
+                x 763
+                y 120
+            }
+            l {
+                image  key.png
+                x 863
+                y 120
+            }
+            
+            
+            CAP {
+                image  key2.png
+                x 10
+                y 185
+            }
+			z {
+                image  key.png
+                x 163
+                y 185
+            }
+            x {
+                image  key.png
+                x 263
+                y 185
+            }
+            c {
+                image  key.png
+                x 363
+                y 185
+            }
+            v {
+                image  key.png
+                x 463
+                y 185
+            }
+            b {
+                image  key.png
+                x 563
+                y 185
+            }
+            n {
+                image  key.png
+                x 662
+                y 185
+            }
+            m {
+                image  key.png
+                x 762
+                y 185
+            }
+			
+			DEL {
+                image  key2.png
+                x 862
+                y 185
+            }
+			
+			
+			
+			SYM {
+                image  key2.png
+                x 10
+                y 248
+            }
+			T {
+                image  key.png
+                x 163
+                y 248
+            }
+			SPACE {
+                image  spacebar.png
+                x 263
+                y 248
+            }
+            PERIOD {
+                image  key.png
+                x 762
+                y 248
+            }
+            NEXT {
+                image  key2.png
+                x 862
+                y 248
+            }
+        }
+    }
+}
+
+layouts {
+    portrait {
+        width     2400
+        height    2500
+        color     0xe0e0e0
+        event     EV_SW:0:1
+        
+        part1 {
+            name    portrait
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    landscape
+            x       2400
+            y       0
+        }
+
+        part3 {
+            name    device
+            x       120
+            y       297
+        }
+        part4 {
+            name    controls
+            x       1550
+            y       600
+        }
+        part5 {
+            name    keyboard
+            x       1340
+            y       1300
+        }
+
+    }
+
+    landscape {
+        width     2500
+        height    2400
+        color     0xe0e0e0
+        event     EV_SW:0:0
+		dpad-rotation 3
+		
+        part1 {
+            name    landscape
+            x       0
+            y       0
+        }
+
+        part2 {
+            name      device
+            x         298
+            y         1200
+            rotation  3
+        }
+
+        part3 {
+            name     controls
+            x        1600
+            y        1500
+        }
+
+        part4 {
+            name     keyboard
+            x        330
+            y        1580
+        }
+    }
+}
+
+keyboard {
+    charmap qwerty2
+}
+
+network {
+    speed  full
+    delay  none
+}
